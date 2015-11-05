@@ -148,7 +148,9 @@ var ImageCard = React.createClass({
         <span className="icon icon-badge-private"></span>
       );
     }
-    let pullCount = (this.props.image.pull_count < 1000) ? numeral(this.props.image.pull_count) : numeral(this.props.image.pull_count).format('0.0 a').toUpperCase();
+    //let favCount = (this.props.image.star_count < 1000) ? numeral(this.props.image.star_count) : numeral(this.props.image.star_count).format('0.0 a').toUpperCase();
+    let favCount = this.props.image.star_count;
+    let pullCount = (this.props.image.pull_count < 1000) ? numeral(this.props.image.pull_count) : numeral(this.props.image.pull_count).format('0 a').toUpperCase();
     return (
       <div className="image-item">
         <div className="overlay menu-overlay">
@@ -187,7 +189,7 @@ var ImageCard = React.createClass({
           <div className="actions">
             <div className="favorites">
               <span className="icon icon-favorite"></span>
-              <span className="text">{this.props.image.star_count}</span>
+              <span className="text">{favCount}</span>
               <span className="icon icon-download"></span>
               <span className="text">{pullCount}</span>
             </div>
