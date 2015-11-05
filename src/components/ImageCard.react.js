@@ -106,10 +106,10 @@ var ImageCard = React.createClass({
     if (this.props.image.description) {
       description = this.props.image.description;
     } else {
-      description = "No description.";
+      description = 'No description.';
     }
     var logoStyle = {
-      //backgroundImage: `linear-gradient(-180deg, ${this.props.image.gradient_start} 4%, ${this.props.image.gradient_end}  100%)`
+      /* backgroundImage: 'linear-gradient(-180deg, ${this.props.image.gradient_start} 4%, ${this.props.image.gradient_end}  100%)' */
       backgroundColor: this.props.image.gradient_start
     };
     var imgsrc;
@@ -148,9 +148,9 @@ var ImageCard = React.createClass({
         <span className="icon icon-badge-private"></span>
       );
     }
-    //let favCount = (this.props.image.star_count < 1000) ? numeral(this.props.image.star_count) : numeral(this.props.image.star_count).format('0.0 a').toUpperCase();
-    let favCount = this.props.image.star_count;
-    let pullCount = (this.props.image.pull_count < 1000) ? numeral(this.props.image.pull_count) : numeral(this.props.image.pull_count).format('0 a').toUpperCase();
+    console.log(this.props.image.star_count);
+    let favCount = (this.props.image.star_count < 1000) ? this.props.image.star_count : numeral(this.props.image.star_count).format('0.0a').toUpperCase();
+    let pullCount = (this.props.image.pull_count < 1000) ? this.props.image.pull_count : numeral(this.props.image.pull_count).format('0a').toUpperCase();
     return (
       <div className="image-item">
         <div className="overlay menu-overlay">
